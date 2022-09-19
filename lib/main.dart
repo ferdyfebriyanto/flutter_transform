@@ -45,14 +45,18 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     // PERSPECTIVE WIDGET
     return Transform(
-      // Transform widget
-      transform: Matrix4.identity()
-        ..setEntry(3, 2, 0.001) // perspective
-        ..rotateX(_offset.dy)
-        ..rotateY(_offset.dx),
-      alignment: FractionalOffset.center,
-      child: _defaultApp(context),
-    );
+        // Transform widget
+        transform: Matrix4.identity()
+          ..setEntry(3, 2, 0.001) // perspective
+          ..rotateX(_offset.dy)
+          ..rotateY(_offset.dx),
+        alignment: FractionalOffset.center,
+        child: GestureDetector(
+          // new
+          onPanUpdate: (details) => setState(() => _offset += details.delta),
+          onDoubleTap: () => setState(() => _offset = Offset.zero),
+          child: _defaultApp(context),
+        ));
     // END PERSPECTIVE WIDGET
   }
 
