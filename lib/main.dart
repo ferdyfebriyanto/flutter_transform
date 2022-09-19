@@ -49,8 +49,8 @@ class _MyHomePageState extends State<MyHomePage> {
         // Transform widget
         transform: Matrix4.identity()
           ..setEntry(3, 2, 0.001) // perspective
-          ..rotateX(_offset.dy)
-          ..rotateY(_offset.dx),
+          ..rotateX(0.01 * _offset.dy) // changed
+          ..rotateY(-0.01 * _offset.dx), // changed
         alignment: FractionalOffset.center,
         child: GestureDetector(
           // new
@@ -65,7 +65,7 @@ class _MyHomePageState extends State<MyHomePage> {
   _defaultApp(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(widget.title),
+        title: Text('The Matrix 3D'),
       ),
       body: Center(
         child: Column(
