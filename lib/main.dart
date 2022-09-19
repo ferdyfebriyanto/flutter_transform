@@ -53,6 +53,7 @@ class _MyHomePageState extends State<MyHomePage> {
       alignment: FractionalOffset.center,
       child: _defaultApp(context),
     );
+    // END PERSPECTIVE WIDGET
   }
 
   @override
