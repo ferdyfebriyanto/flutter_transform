@@ -33,7 +33,8 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
-  Offset _offset = Offset(0.4, 0.7); // new
+  // Offset _offset = Offset(0.4, 0.7); // new
+  Offset _offset = Offset.zero; // changed
 
   void _incrementCounter() {
     setState(() {
