@@ -45,13 +45,13 @@ class _MyHomePageState extends State<MyHomePage> {
                 },
               ),
               ElevatedButton(
-                child: const Text('Flip'),
+                child: const Text('3D Flip Animation'),
                 onPressed: () {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => FlipWidget(
-                        child: Text('1'),
+                      builder: (context) => MyHomeFlip(
+                        title: 'Flip 3D',
                       ),
                     ),
                   );
